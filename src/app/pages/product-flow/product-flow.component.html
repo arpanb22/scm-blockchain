@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Show Product Flow</h1>
+
+  <div class="form-group">
+    <label for="productId">Product Id</label>
+    <input type="productId" class="form-control" id="productId" aria-describedby="productIdHelp" [(ngModel)]="this.productId">
+    <small id="productIdHelp" class="form-text text-muted">
+    This is the product you want to track!  
+    </small>
+  </div>
+  <app-transactions-table
+  [transactions]="flow"
+  ></app-transactions-table>
+
+  <button (click)="showProductFlow();" type="submit" class="btn btn-primary">Show Flow!</button>
+
+</div>

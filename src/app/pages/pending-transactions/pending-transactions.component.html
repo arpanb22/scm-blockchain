@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Pending transactions</h1>
+
+  <app-transactions-table
+  [transactions]="pendingTransactions"
+  ></app-transactions-table>
+  &nbsp;
+  <h1>Confirm transactions</h1>
+  <app-transactions-table
+  [transactions]="confirmTransactions"
+  ></app-transactions-table>
+  &nbsp;
+  <h1>Suspended transactions</h1>
+  <app-transactions-table
+  [transactions]="suspendedTransactions"
+  ></app-transactions-table>
+ 
+  <!--<button class="btn btn-primary"(click)=mineConfirmTransactions()>Start mining!</button>-->
+
+  <button (click)="mineConfirmTransactions();" type="submit" class="btn btn-primary">Start mining!</button>
+
+</div>
