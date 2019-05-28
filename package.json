@@ -19,8 +19,6 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "@types/elliptic": "^6.4.8",
-    "SavjeeCoin": "github:Savjee/SavjeeCoin",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
