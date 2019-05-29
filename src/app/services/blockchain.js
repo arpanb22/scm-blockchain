@@ -81,7 +81,7 @@ class Transaction {
     if (this.fromAddress === null) return true;
 
     if (!this.signature || this.signature.length === 0) {
-      console.log('No signature in this transaction');
+      alert('No signature in this transaction');
       return false;
     }
 /*  if ( Blockchain.getBalanceOfAddress(this.fromAddress) < this.productWeight ){
@@ -142,7 +142,6 @@ class Block {
   hasValidTransactions() {
     for (const tx of this.transactions) {
       if (!tx.isValid()) {
-        //console.log('here')
         return false;
       }
     }
@@ -268,10 +267,7 @@ class Blockchain {
       return false;
     }
     else if ((transaction.fromAddress === null) &&  !(this.producers.includes(transaction.participantId))){
-      //console.log("From address: "+transaction.fromAddress);
-      //console.log("To address: "+transaction.participantId);
-      //console.log("Producers Array: "+this.producers);
-      //console.log('Transaction is not of producing an element')
+      alert('Participant is not a producer!');
       return false;
     } 
 
@@ -285,7 +281,7 @@ class Blockchain {
       alert(transaction.fromAddress+' donot have sufficient product to transfer');
       return false;
     }
-    if(!transaction.participantId.startsWith('customer'))
+    if(!transaction.participantId.startsWith('cust'))
       this.pendingTransactions.push(transaction);
     else
       this.confirmTransactions.push(transaction);

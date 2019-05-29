@@ -14,4 +14,23 @@
 
   <button (click)="showProductFlow();" type="submit" class="btn btn-primary">Show Flow!</button>
 
+  <br>
+  <br>
+  <h1>Show User Balance</h1>
+  <div class="form-group">
+    <label for="userId">User Id</label>
+    <input type="userId" class="form-control" id="userId" aria-describedby="userIdHelp" [(ngModel)]="this.userId">
+    <small id="userIdHelp" class="form-text text-muted">
+      This is the id of the user you want to know the balance!
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="userBalance">Balance</label>
+    <input type="userBalance" class="form-control" id="userBalance" aria-describedby="userBalanceHelp" [(ngModel)]="this.balance" disabled>
+    <small id="userBalanceHelp" class="form-text text-muted">
+      This is the balance of the user!
+    </small>
+  </div>
+  <button (click)="showBalance();" type="submit" class="btn btn-primary">Check Balance!</button>
+
 </div>

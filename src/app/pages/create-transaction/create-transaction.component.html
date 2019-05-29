@@ -1,13 +1,12 @@
 <div class="container">
 	<h1>Create transaction</h1>
-	<p>Transfer some money to someone!</p>
+	<p>Transfer some product to someone!</p>
 
 	<br>
 
 	<div class="form-group">
 	    <label for="fromAddress">Sender Id</label>
 	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="this.senderid" >
-			<!--<input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="walletKey.publicKey" disabled>-->
 			<small id="fromAddressHelp" class="form-text text-muted">
 					This is the id of the sender.
 	    </small>
@@ -17,7 +16,7 @@
 	    <label for="participantId">Receiver Id</label>
 	    <input type="text" class="form-control" id="participantId" aria-describedby="participantIdHelp" [(ngModel)]="this.receiverid" >
 	    <small id="participantIdHelp" class="form-text text-muted">
-	    	The address of the wallet where you want to send the money to. 
+	    	The id of the reciever where you want to send the product to. 
 	    </small>
     </div>
     
@@ -34,8 +33,8 @@
 	    <label for="productWeight">Product Weight</label>
 	    <input type="productWeight" class="form-control" id="productWeight" aria-describedby="productWeightHelp" [(ngModel)]="newTx.productWeight">
 	    <small id="productWeightHelp" class="form-text text-muted">
-	    	You can transfer any amount. Account balance is not checked in this demo. Have at it!
-	    </small>
+				This is the amount of the product you want to transfer!  
+			</small>
     </div>
     
     <div class="form-group">
@@ -53,19 +52,39 @@
 	    	This is the status of your transaction!
 	    </small>
 		</div>
-		
+		<!--
 		<div class="form-group">
 	    <label for="Transaction">Number of Pending Transactions</label>
 	    <input type="text" class="form-control" id="Transaction" aria-describedby="participantIdHelp" [(ngModel)]="this.blockchainService.blockchainInstance.pendingTransactions.length" disabled>
 	    <small id="TrasnsactionHelp" class="form-text text-muted">
-					This is the number of pending transactions
+					This is the number of pending transaction(s)!
 			</small>
-    </div>
+		</div>
+		-->
+		<div class="form-inline">
+			<div class="form-group">
+				<label for="Transaction">Number of Pending Transactions</label>
+				<input type="text" class="form-control" id="Transaction" aria-describedby="participantIdHelp" [(ngModel)]="this.blockchainService.blockchainInstance.pendingTransactions.length" disabled>
+				<!--<small id="TrasnsactionHelp" class="form-text text-muted">
+						This is the number of pending transaction(s)!
+				</small>-->
+			</div>
+				&nbsp;				&nbsp;
+			<div class="form-group">
+				<label for="Transaction">Number of Users</label>
+				<input type="text" class="form-control" id="Transaction" aria-describedby="participantIdHelp" [(ngModel)]="this.blockchainService.walletKeys.length" disabled>
+				<!--<small id="TrasnsactionHelp" class="form-text text-muted">
+						This is the number of pending transaction(s)!
+				</small>-->
+			</div>
+		</div> 
     
-
-		<button (click)="createTransaction();" type="submit" class="btn btn-primary">Sign & create transaction</button>
-		&nbsp;
-		<button (click)="confirmTransaction();" type="submit" class="btn btn-primary">Sign & confirm receipt</button>
+		<br>
+		<button (click)="createTransaction();" type="submit" class="btn btn-primary">Sign & create transaction!</button>
+		&nbsp;&nbsp;&nbsp;
+		<button (click)="confirmTransaction();" type="submit" class="btn btn-primary">Sign & confirm receipt!</button>
+		&nbsp;&nbsp;&nbsp;
+		<button (click)="addUser();" type="submit" class="btn btn-primary">Add User!</button>
 
 
 </div>

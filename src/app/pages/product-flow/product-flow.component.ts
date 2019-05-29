@@ -11,6 +11,8 @@ export class ProductFlowComponent implements OnInit {
 
   public productId;
   public flow;
+  public userId;
+  public balance;
 
   constructor(private blockchainService: BlockchainService, private router: Router, private route: ActivatedRoute) {
     this.flow = [];
@@ -22,6 +24,12 @@ export class ProductFlowComponent implements OnInit {
   showProductFlow(){
     this.flow = [];
     this.flow = this.blockchainService.getProductFlow(this.productId);
+  }
+  
+  showBalance(){
+    debugger
+    this.balance = 0;
+    this.balance = this.blockchainService.getBalance(this.userId);
   }
 
 }

@@ -23,6 +23,15 @@ export class BlockchainService {
      return this.blockchainInstance.chain;
    }
 
+   getBalance(userId){
+    debugger
+    if(userId.trim().toLowerCase().startsWith('cust'))
+      return this.blockchainInstance.getBalanceOfAddress(userId);
+    else
+      return this.blockchainInstance.getBalanceOfAddress(this.walletKeys[Number(userId)-1].publicKey);
+
+   }
+
    addTransaction(tx){
      this.blockchainInstance.addTransaction(tx);    
    }
@@ -54,7 +63,7 @@ export class BlockchainService {
     }
 
 
-   private generateWalletKeys(){
+   generateWalletKeys(){
      const ec = new EC.ec('secp256k1');
      const key = ec.genKeyPair();
      this.walletKeys.push({
